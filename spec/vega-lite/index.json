@@ -117,6 +117,10 @@
     {
       "name": "bar_layered_transparent",
       "title": "Layered Bar Chart"
+    },
+    {
+      "name": "bar_diverging_stacked",
+      "title": "Diverging Stacked Bar Chart"
     }
   ],
   "Trellis": [
@@ -146,12 +150,25 @@
   ],
   "Layering": [
     {
+      "name": "layer_bar_labels",
+      "title": "Simple Bar Chart with Labels",
+      "style": "background-size: auto 70%; background-position-y: center;"
+    },
+    {
       "name": "layer_precipitation_mean",
       "title": "Mean overlay over precipitation chart"
     },{
       "name": "layer_text_heatmap",
       "title": "Layering text over heatmap",
       "style": "background-size: auto 55%; background-position-y: center !important;"
+    },
+    {
+      "name": "box-plot_minmax_2D_vertical_normalized",
+      "title": "Box Plot with Min/Max Whiskers"
+    },
+    {
+      "name": "box-plot_tukey_2D_vertical_normalized",
+      "title": "Tukey Box Plot (1.5 IQR)"
     },
     {
       "name": "layer_candlestick",
@@ -181,6 +198,21 @@
       "name": "layered_falkensee",
       "title": "Falkensee",
       "style": "background-size: auto 90%; background-position-y: center !important;"
+    },
+    {
+      "name": "layer_ranged_dot",
+      "title": "Ranged Dot Plot",
+      "style": "background-size: auto 70%; background-position-y: center;"
+    },
+    {
+      "name": "layer_bar_dual_axis",
+      "title": "Layered Plot with Dual-Axis",
+      "style": "background-size: 100% auto; background-position-y: center;"
+    },
+    {
+      "name": "area_horizon",
+      "title": "Horizon Graph",
+      "style": "background-size: auto 70%; background-position-y: center;"
     }
   ],
   "Composition": [
@@ -217,6 +249,10 @@
     {
       "name": "interactive_splom",
       "title": "Scatterplot Matrix"
+    },
+    {
+      "name": "concat_layer",
+      "title": "Interactive Dashboard with Cross Highlight"
     }
   ]
 }
