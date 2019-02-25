@@ -69,7 +69,18 @@
     "y": {
       "field": "symbol",
       "type": "nominal",
-      "title": null
+      "title": ""
+    }
+  },
+  "config": {
+    "range": {
+      "heatmap": {
+        "scheme": "viridis",
+        "extent": [
+          1,
+          0
+        ]
+      }
     }
   }
 }

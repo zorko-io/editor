@@ -13,11 +13,11 @@
     "x": {
       "field": "bin_IMDB_Rating",
       "title": "IMDB_Rating (binned)",
-      "bin": {
-        "binned": true,
-        "step": 1
-      },
-      "type": "quantitative"
+      "bin": "binned",
+      "type": "quantitative",
+      "axis": {
+        "tickStep": 1
+      }
     },
     "x2": {"field": "bin_IMDB_Rating_end"},
     "y": {

@@ -56,14 +56,15 @@
     },
     {"stack": "percentage", "as": ["v1", "v2"], "groupby": ["question"]},
     {
-      "joinaggregate": [
+      "window": [
         {
           "field": "signed_percentage",
           "op": "sum",
           "as": "offset"
         }
       ],
-      "groupby": ["question"]
+      "groupby": ["question"],
+      "frame": [null, null]
     },
     {"calculate": "datum.v1 - datum.offset", "as": "nx"},
     {"calculate": "datum.v2 - datum.offset", "as": "nx2"}
