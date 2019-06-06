@@ -42,6 +42,11 @@ class Header extends React.PureComponent<Props, State> {
     };
   }
 
+  public getCookie(name) {
+    const cookie = document.cookie.match('\\b' + name + '=([^;]*)\\b');
+    return cookie ? cookie[1] : false;
+  }
+
   public onSelectVega(name) {
     this.props.history.push(`/examples/vega/${name}`);
   }
@@ -171,6 +176,16 @@ class Header extends React.PureComponent<Props, State> {
       </div>
     );
 
+    const auth = this.getCookie('user') ? (
+      <form action="http://localhost:9000/auth/github/logout" method="get">
+        <input type="submit" value="Logout" />
+      </form>
+    ) : (
+      <form action="http://localhost:9000/auth/github" method="get">
+        <input type="submit" value="Login" />
+      </form>
+    );
+
     const runButton = (
       <div className="header-button" onClick={() => this.props.parseSpec(true)}>
         <Play className="header-icon" />
@@ -273,6 +288,7 @@ class Header extends React.PureComponent<Props, State> {
     return (
       <div className="header">
         <section className="left-section">
+          <span>{auth}</span>
           <span>{modeSwitcher}</span>
           <span>{clearButton}</span>
           <span>{formatButton}</span>
