@@ -4,6 +4,8 @@ import { LocalLogger } from '../utils/logger';
 import { LAYOUT, Mode, NAVBAR, Renderer, SIDEPANE, VEGA_LITE_START_SPEC, View } from './consts';
 
 export interface State {
+  user: any;
+  isAuth: boolean;
   baseURL: string;
   compiledVegaSpec: boolean;
   compiledVegaPaneSize: number;
@@ -44,6 +46,7 @@ export const DEFAULT_STATE: State = {
   export: false,
   format: false,
   gist: null,
+  isAuth: false,
   lastPosition: 0,
   logs: false,
   manualParse: false,
@@ -54,6 +57,7 @@ export const DEFAULT_STATE: State = {
   selectedExample: null,
   sidePaneItem: SIDEPANE.CompiledVega,
   themeName: 'custom',
+  user: undefined,
   vegaLiteSpec: null,
   vegaSpec: {},
   view: null,

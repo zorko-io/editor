@@ -9,6 +9,7 @@ import { mapDispatchToProps, mapStateToProps } from '.';
 import { Mode } from '../../constants';
 import { NAMES } from '../../constants/consts';
 import { VEGA_LITE_SPECS, VEGA_SPECS } from '../../constants/specs';
+import { getCookie } from '../../utils/getCookie';
 import ExportModal from './export-modal/index';
 import GistModal from './gist-modal/index';
 import HelpModal from './help-modal/index';
@@ -42,9 +43,26 @@ class Header extends React.PureComponent<Props, State> {
     };
   }
 
-  public getCookie(name) {
-    const cookie = document.cookie.match('\\b' + name + '=([^;]*)\\b');
-    return cookie ? cookie[1] : false;
+  public componentDidMount() {
+    const cookieName = 'vegasessid';
+    const cookieValue = encodeURIComponent(getCookie(cookieName));
+    fetch('http://localhost:9000/auth/github/logged', {
+      credentials: 'include',
+      headers: {
+        Cookie: `${cookieName}=${cookieValue}`,
+      },
+      method: 'get',
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(json => {
+        this.props.isLoggedIn(json.isAuth);
+      })
+      .catch(err => {
+        // console.error(err);
+        this.props.isLoggedIn(false);
+      });
   }
 
   public onSelectVega(name) {
@@ -176,7 +194,7 @@ class Header extends React.PureComponent<Props, State> {
       </div>
     );
 
-    const auth = this.getCookie('user') ? (
+    const auth = this.props.isAuth ? (
       <form action="http://localhost:9000/auth/github/logout" method="get">
         <input type="submit" value="Logout" />
       </form>

@@ -1,5 +1,7 @@
 import { Mode, Renderer, View } from '../constants';
 
+export const AUTHENTICATE: 'AUTHENTICATE' = 'AUTHENTICATE';
+export const RECEIVE_CURRENT_USER: 'RECEIVE_CURRENT_USER' = 'RECEIVE_CURRENT_USER';
 export const EXPORT_VEGA: 'EXPORT_VEGA' = 'EXPORT_VEGA';
 export const FORMAT_SPEC: 'FORMAT_SPEC' = 'FORMAT_SPEC';
 export const LOG_ERROR: 'LOG_ERROR' = 'LOG_ERROR';
@@ -29,6 +31,8 @@ export const SET_THEME_NAME: 'SET_THEME_NAME' = 'SET_THEME_NAME';
 export const SET_SIDEPANE_ITEM: 'SET_SIDEPANE_ITEM' = 'SET_SIDEPANE_ITEM';
 
 export type Action =
+  | ReceiveCurrentUser
+  | IsLoggedIn
   | SetMode
   | SetModeOnly
   | SetScrollPosition
@@ -278,3 +282,20 @@ export function setSidePaneItem(value: string) {
 }
 
 export type SetSidePaneItem = ReturnType<typeof setSidePaneItem>;
+export function isLoggedIn(value: boolean) {
+  return {
+    isAuth: value,
+    type: AUTHENTICATE,
+  };
+}
+
+export type IsLoggedIn = ReturnType<typeof isLoggedIn>;
+
+export function receiveCurrentUser(user: any) {
+  return {
+    type: RECEIVE_CURRENT_USER,
+    user,
+  };
+}
+
+export type ReceiveCurrentUser = ReturnType<typeof receiveCurrentUser>;

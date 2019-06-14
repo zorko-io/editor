@@ -7,6 +7,7 @@ import Renderer from './renderer';
 export function mapStateToProps(state: State, ownProps) {
   return {
     editorString: state.editorString,
+    isAuth: state.isAuth,
     lastPosition: state.lastPosition,
     manualParse: state.manualParse,
     mode: state.mode,
@@ -21,7 +22,9 @@ export function mapDispatchToProps(dispatch: Dispatch<EditorActions.Action>) {
     {
       exportVega: EditorActions.exportVega,
       formatSpec: EditorActions.formatSpec,
+      isLoggedIn: EditorActions.isLoggedIn,
       parseSpec: EditorActions.parseSpec,
+      receiveCurrentUser: EditorActions.receiveCurrentUser,
       setScrollPosition: EditorActions.setScrollPosition,
       toggleAutoParse: EditorActions.toggleAutoParse,
       updateVegaSpec: EditorActions.updateVegaSpec,
