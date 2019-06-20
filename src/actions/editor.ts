@@ -282,6 +282,7 @@ export function setSidePaneItem(value: string) {
 }
 
 export type SetSidePaneItem = ReturnType<typeof setSidePaneItem>;
+
 export function isLoggedIn(value: boolean) {
   return {
     isAuth: value,

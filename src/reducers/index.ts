@@ -293,6 +293,7 @@ export default (state: State = DEFAULT_STATE, action: Action): State => {
       return {
         ...state,
         sidePaneItem: action.sidePaneItem,
+      };
     case AUTHENTICATE:
       return {
         ...state,

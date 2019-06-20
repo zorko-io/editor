@@ -24,6 +24,9 @@ interface State {
   scrollPosition: number;
 }
 
+const url = '';
+// const url = 'write backend url here';
+
 const formatExampleName = (name: string) => {
   return name
     .split(/[_-]/)
@@ -46,7 +49,7 @@ class Header extends React.PureComponent<Props, State> {
   public componentDidMount() {
     const cookieName = 'vegasessid';
     const cookieValue = encodeURIComponent(getCookie(cookieName));
-    fetch('http://localhost:9000/auth/github/logged', {
+    fetch(`${url}auth/github/logged`, {
       credentials: 'include',
       headers: {
         Cookie: `${cookieName}=${cookieValue}`,
@@ -195,11 +198,11 @@ class Header extends React.PureComponent<Props, State> {
     );
 
     const auth = this.props.isAuth ? (
-      <form action="http://localhost:9000/auth/github/logout" method="get">
+      <form action={`${url}auth/github/logout`} method="get">
         <input type="submit" value="Logout" />
       </form>
     ) : (
-      <form action="http://localhost:9000/auth/github" method="get">
+      <form action={`${url}auth/github`} method="get">
         <input type="submit" value="Login" />
       </form>
     );
