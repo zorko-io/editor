@@ -77,6 +77,9 @@
       {
         "name": "bar_negative",
         "title": "Bar Chart with negative values and a zero-baseline"
+      },
+      { "name": "bar_axis_space_saving",
+        "title": "Bar Chart with a spacing-saving y-axis"
       }
     ],
     "Histograms, Density Plots, and Dot Plots": [
@@ -220,6 +223,10 @@
         "title": "Multi Series Line Chart"
       },
       {
+        "name": "repeat_layer",
+        "title": "Multi Series Line Chart with Repeat Operator"
+      },
+      {
         "name": "line_color_halo",
         "title": "Multi Series Line Chart with Halo Stroke"
       },
@@ -341,6 +348,10 @@
       {
         "name": "rect_mosaic_labelled_with_offset",
         "title": "Mosaic Chart with Labels"
+      },
+      {
+        "name": "point_angle_windvector",
+        "title": "Wind Vector Map"
       }
     ],
     "Circular Plots": [
@@ -363,6 +374,10 @@
         "name": "arc_radial",
         "title": "Radial Plot",
         "description": "This radial plot uses both angular and radial extent to convey multiple dimensions of data. However, this approach is not perceptually effective, as viewers will most likely be drawn to the total area of the shape, conflating the two dimensions. This example also demonstrates a way to add labels to circular plots."
+      },
+      {
+        "name": "arc_pie_pyramid",
+        "title": "Pyramid Pie Chart"
       }
     ],
     "Advanced Calculations": [
