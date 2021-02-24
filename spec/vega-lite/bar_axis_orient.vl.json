@@ -1,5 +1,5 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A bar chart that uses signals for axis orient.",
   "data": {
     "values": [
@@ -14,31 +14,27 @@
       {"a": "I", "b": 52}
     ]
   },
+  "params": [{
+    "name": "xAxisOrient",
+    "value": "bottom",
+    "bind": {"input": "select", "options": ["top", "bottom"]}
+  },
+  {
+    "name": "yAxisOrient",
+    "value": "left",
+    "bind": {"input": "select", "options": ["left", "right"]}
+  }],
   "mark": "bar",
   "encoding": {
     "x": {
       "field": "a",
       "type": "ordinal",
-      "axis": {"orient": {"signal": "xAxisOrient"}}
+      "axis": {"orient": {"expr": "xAxisOrient"}}
     },
     "y": {
       "field": "b",
       "type": "quantitative",
-      "axis": {"orient": {"signal": "yAxisOrient"}}
+      "axis": {"orient": {"expr": "yAxisOrient"}}
     }
-  },
-  "config": {
-    "signals": [
-      {
-        "name": "xAxisOrient",
-        "value": "bottom",
-        "bind": {"input": "select", "options": ["top", "bottom"]}
-      },
-      {
-        "name": "yAxisOrient",
-        "value": "left",
-        "bind": {"input": "select", "options": ["left", "right"]}
-      }
-    ]
   }
 }
