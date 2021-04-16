@@ -5,9 +5,9 @@ object-assign
 */
 
 /*!
- * clipboard.js v2.0.6
+ * clipboard.js v2.0.8
  * https://clipboardjs.com/
- * 
+ *
  * Licensed MIT © Zeno Rocha
  */
 
@@ -49,7 +49,7 @@ object-assign
   !*** external {"root":"PropTypes","amd":"prop-types","commonjs":"prop-types","commonjs2":"prop-types"} ***!
   \*********************************************************************************************************/
 
-/** @license React v0.20.1
+/** @license React v0.20.2
  * scheduler.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -67,7 +67,7 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/** @license React v17.0.1
+/** @license React v17.0.2
  * react-dom.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -76,7 +76,7 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/** @license React v17.0.1
+/** @license React v17.0.2
  * react.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
