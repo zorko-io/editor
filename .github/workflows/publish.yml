@@ -27,7 +27,6 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          target: standalone
           tags: zorko/vega-editor:latest
 
       - name: Image digest
